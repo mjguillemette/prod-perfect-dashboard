@@ -2,37 +2,48 @@ import React from 'react';
 import '../App.css';
 
 class InputForm extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {value: '1-5'};
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+    state = {
+        engineers: 10,
+        calculatedTotal: 0,
+        hourly: 25
+    }
+
+    handleEngineers = (event) => {
+      this.setState({engineers: event.target.value});
+    }
+
+    handleHourly = (event) => {
+        this.setState({hourly: event.target.value})
     }
   
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
-  
-    handleSubmit(event) {
-      alert('You have selected: ' + this.state.value)
+    handleSubmit = (event) => {
+      console.log('You have selected: ' + this.state.value)
+      this.setState({calculatedTotal: Math.pow(this.state.engineers, 2) * this.state.hourly})
       event.preventDefault();
     }
   
     render() {
       return (
+          <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Estimated hours to fix? <br/>
-            <select value ={this.state.value} onChange={this.handleChange}>
-              <option value="1-5">1 - 5 Hours</option>
-              <option value="6-10">6 - 10 Hours</option>
-              <option value="11-15">11 - 15 Hours</option>
-              <option value="15+">More than 15 Hours</option>
+            Size of engineering team: <t/>
+            <select value={this.state.engineers} onChange={this.handleEngineers}>
+              <option value="5">1 - 5 Engineers</option>
+              <option value="10">6 - 10 Engineers</option>
+              <option value="15">11 - 15 Engineers</option>
+              <option value="20">More than 15 Engineers</option>
             </select>
+          </label><br/>
+          <label>
+            Average salary of QA Engineer: <t/>
+            <input type="number" value={this.state.hourly} steps="5" onChange={this.handleHourly}/>
           </label>
-          <input type="submit" value="Submit" />
+          <br/>
+          <input className="submitButton" type="submit" value="Submit" />
         </form>
+        <h2>Cost of bugs/month: ${this.state.calculatedTotal.toFixed(2)}</h2>
+        </div>
         
       )
     }
