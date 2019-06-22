@@ -17,7 +17,7 @@ class InputForm extends React.Component {
     }
   
     handleSubmit = (event) => {
-      console.log('You have selected: ' + this.state.value)
+      console.log(`You have selected: ${this.state.engineers}`)
       this.setState({calculatedTotal: Math.pow(this.state.engineers, 2) * this.state.hourly})
       event.preventDefault();
     }
