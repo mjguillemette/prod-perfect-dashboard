@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #323d53;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,8 +23,8 @@
   color: #ffffff;
 }
 
-.submitButton {
-  background-color: #6767ee;
+.resetButton {
+  background-color: #f78080;
   border: none;
   border-radius: 9px;
   color: white;
@@ -32,8 +32,46 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 1.6rem;
+  margin-left: 1.6rem;
+}
+
+.resetButton:hover {
+  outline-style: none;
+  background-color: #616181;
+}
+
+.resetButton:focus {
+  outline-style: none;
+}
+
+.submitButton {
+  background-color: #8080f7;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 1.6rem;
+}
+
+.submitButton:hover {
+  outline-style: none;
+  background-color: #616181;
+}
+
+.submitButton:focus {
+  outline-style: none;
+}
+
+span {
+  color: #c2c2e9
 }
 
 @keyframes App-logo-spin {
