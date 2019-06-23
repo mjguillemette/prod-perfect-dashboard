@@ -70,6 +70,10 @@
   outline-style: none;
 }
 
+.inputField {
+  margin: .8em;
+}
+
 span {
   color: #c2c2e9
 }
