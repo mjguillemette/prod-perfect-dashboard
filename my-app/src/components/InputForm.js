@@ -45,26 +45,23 @@ class InputForm extends React.Component {
           <div>
         <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
           <label>
-            Size of engineering team:
-            <select className="inputField" value={this.state.engineers} onChange={this.handleEngineers}>
-              <option value="5">1 - 5 Engineers</option>
-              <option value="10">6 - 10 Engineers</option>
-              <option value="15">11 - 15 Engineers</option>
-              <option value="20">More than 15 Engineers</option>
-            </select>
+            {this.state.engineers} Developers <br/>
+            <input type="range" max="30" className="slider" value={this.state.engineers} onChange={this.handleEngineers} />
           </label><br/>
           <label>
-            Size of QA team:
-            <select className="inputField" value={this.state.qa} onChange={this.handleQa}>
+            {this.state.qa} QA Engineers <br />
+            <input type="range" max="15" className="slider" value={this.state.qa} onChange={this.handleQa} />
+            {/* <select className="inputField" value={this.state.qa} onChange={this.handleQa}>
               <option value="3">1 - 3 QA</option>
               <option value="6">4 - 6 QA</option>
               <option value="10">7 - 10 QA</option>
               <option value="15">More than 10 QA</option>
-            </select>
+            </select> */}
           </label><br/>
           <label>
-            Average salary of QA Engineer (in $1000s):
-            <input  className="inputField" type="number" value={this.state.salary} min="45" max="100" step="5" onChange={this.handleSalary}/>
+            QA Average Salary: ${this.state.salary * 1000}
+            <input type="range" min="45" max="100" step="5"className="slider" value={this.state.salary} onChange={this.handleSalary} />
+            {/* <input  className="inputField" type="number" value={this.state.salary} min="45" max="100" step="5" onChange={this.handleSalary}/> */}
           </label>
           <br/>
           <input className="submitButton" type="submit" value="Submit" />
