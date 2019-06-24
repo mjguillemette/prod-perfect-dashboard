@@ -4,30 +4,39 @@ import '../App.css';
 class InputForm extends React.Component {
     state = {
       calculatedTotal: 0,
-      engineers: 10,
-      hourly: 25
+      engineers: 5,
+      salary: 55,
+      qa: 3
     }
 
     handleEngineers = (event) => {
       this.setState({engineers: event.target.value})
     }
 
-    handleHourly = (event) => {
-        this.setState({hourly: event.target.value})
+    handleSalary = (event) => {
+      this.setState({salary: event.target.value})
     }
   
-    handleReset = (event) => {
+    handleQa = (event) => {
+      this.setState({qa: event.target.value})
+    }
+
+    handleReset = () => {
       console.log('Data(state) has been reset')
       this.setState({
         calculatedTotal: 0,
-        engineers: 10,
-        hourly: 25
+        engineers: 5,
+        salary: 55,
+        qa: 3
       })
     }
 
     handleSubmit = (event) => {
-      console.log(`You have selected: ${this.state.engineers}`)
-      this.setState({calculatedTotal: Math.pow(this.state.engineers, 2) * this.state.hourly})
+      console.log('You have selected: ' + this.state.engineers + ' engineers')
+      let qaPerDev = this.state.engineers / this.state.qa
+      this.setState({
+        calculatedTotal:  this.state.engineers * (qaPerDev * ((this.state.salary * this.state.engineers) / 12))
+      })
       event.preventDefault();
     }
   
@@ -36,17 +45,23 @@ class InputForm extends React.Component {
           <div>
         <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
           <label>
-            Size of engineering team: <t/>
-            <select value={this.state.engineers} onChange={this.handleEngineers}>
-              <option value="5">1 - 5 Engineers</option>
-              <option value="10">6 - 10 Engineers</option>
-              <option value="15">11 - 15 Engineers</option>
-              <option value="20">More than 15 Engineers</option>
-            </select>
+            {this.state.engineers} Developers <br/>
+            <input type="range" max="30" className="slider" value={this.state.engineers} onChange={this.handleEngineers} />
           </label><br/>
           <label>
-            Average salary of QA Engineer: <t/>
-            <input type="number" value={this.state.hourly} steps="5" onChange={this.handleHourly}/>
+            {this.state.qa} QA Engineers <br />
+            <input type="range" max="15" className="slider" value={this.state.qa} onChange={this.handleQa} />
+            {/* <select className="inputField" value={this.state.qa} onChange={this.handleQa}>
+              <option value="3">1 - 3 QA</option>
+              <option value="6">4 - 6 QA</option>
+              <option value="10">7 - 10 QA</option>
+              <option value="15">More than 10 QA</option>
+            </select> */}
+          </label><br/>
+          <label>
+            QA Average Salary: ${this.state.salary * 1000}
+            <input type="range" min="45" max="100" step="5"className="slider" value={this.state.salary} onChange={this.handleSalary} />
+            {/* <input  className="inputField" type="number" value={this.state.salary} min="45" max="100" step="5" onChange={this.handleSalary}/> */}
           </label>
           <br/>
           <input className="submitButton" type="submit" value="Submit" />
