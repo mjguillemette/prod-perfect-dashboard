@@ -3,19 +3,28 @@ import '../App.css';
 
 class InputForm extends React.Component {
     state = {
-        engineers: 10,
-        calculatedTotal: 0,
-        hourly: 25
+      calculatedTotal: 0,
+      engineers: 10,
+      hourly: 25
     }
 
     handleEngineers = (event) => {
-      this.setState({engineers: event.target.value});
+      this.setState({engineers: event.target.value})
     }
 
     handleHourly = (event) => {
         this.setState({hourly: event.target.value})
     }
   
+    handleReset = (event) => {
+      console.log('Data(state) has been reset')
+      this.setState({
+        calculatedTotal: 0,
+        engineers: 10,
+        hourly: 25
+      })
+    }
+
     handleSubmit = (event) => {
       console.log(`You have selected: ${this.state.engineers}`)
       this.setState({calculatedTotal: Math.pow(this.state.engineers, 2) * this.state.hourly})
@@ -25,7 +34,7 @@ class InputForm extends React.Component {
     render() {
       return (
           <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
           <label>
             Size of engineering team: <t/>
             <select value={this.state.engineers} onChange={this.handleEngineers}>
@@ -41,6 +50,7 @@ class InputForm extends React.Component {
           </label>
           <br/>
           <input className="submitButton" type="submit" value="Submit" />
+          <input className="resetButton" type="reset" value="Reset" />
         </form>
         <h2>Cost of bugs/month: ${this.state.calculatedTotal.toFixed(2)}</h2>
         </div>
