@@ -2,14 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
 .App-header {
-  background-color: #323d53;
+  background-color: #506185;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -70,8 +65,14 @@
   outline-style: none;
 }
 
-.inputField {
-  margin: .8em;
+.teamForm {
+  border-radius: 8px;
+  background-color: #323d53;
+  padding: 2rem;
+}
+
+.inputForm {
+  width: 600px;
 }
 
 span {
@@ -92,9 +93,10 @@ input[type=range] {
   height: 20px;
   background-color: #323d53;
   -webkit-appearance: none;
-  margin: 10px 0;
+  margin: 10px auto;
   width: 60%;
 }
+
 input[type=range]:focus {
   outline: none;
 }

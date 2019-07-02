@@ -9,16 +9,27 @@ class InputForm extends React.Component {
       qa: 3
     }
 
-    handleEngineers = (event) => {
-      this.setState({engineers: event.target.value})
-    }
+    handleChange = (event) => {
+      switch(event.target.id){
+        case 'dev':
+          this.setState({engineers: event.target.value})
+          break
+        case 'qa':
+          this.setState({qa: event.target.value})
+          break
+        case 'salary':
+          this.setState({salary: event.target.value})
+          break
+        default:
+          break
+      }
 
-    handleSalary = (event) => {
-      this.setState({salary: event.target.value})
-    }
-  
-    handleQa = (event) => {
-      this.setState({qa: event.target.value})
+      console.log(`Devs: ${this.state.engineers}, QA: ${this.state.qa}, Salary: ${this.state.salary}` )
+      let qaPerDev = this.state.engineers / this.state.qa
+      this.setState({
+        calculatedTotal:  this.state.engineers * (qaPerDev * (((this.state.salary * 10) * (this.state.engineers/3)) / 12))
+      })
+      // event.preventDefault();
     }
 
     handleReset = () => {
@@ -30,27 +41,19 @@ class InputForm extends React.Component {
         qa: 3
       })
     }
-
-    handleSubmit = (event) => {
-      console.log('You have selected: ' + this.state.engineers + ' engineers')
-      let qaPerDev = this.state.engineers / this.state.qa
-      this.setState({
-        calculatedTotal:  this.state.engineers * (qaPerDev * ((this.state.salary * this.state.engineers) / 12))
-      })
-      event.preventDefault();
-    }
   
     render() {
       return (
-          <div>
+          <div className="inputForm">
         <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
+        <div className="teamForm">
           <label>
             {this.state.engineers} Developers <br/>
-            <input type="range" max="30" className="slider" value={this.state.engineers} onChange={this.handleEngineers} />
+            <input id="dev" type="range" max="30" className="slider" value={this.state.engineers} onChange={this.handleChange} />
           </label><br/>
           <label>
             {this.state.qa} QA Engineers <br />
-            <input type="range" max="15" className="slider" value={this.state.qa} onChange={this.handleQa} />
+            <input id="qa" type="range" max="15" className="slider" value={this.state.qa} onChange={this.handleChange} />
             {/* <select className="inputField" value={this.state.qa} onChange={this.handleQa}>
               <option value="3">1 - 3 QA</option>
               <option value="6">4 - 6 QA</option>
@@ -60,11 +63,11 @@ class InputForm extends React.Component {
           </label><br/>
           <label>
             QA Average Salary: ${this.state.salary * 1000}
-            <input type="range" min="45" max="100" step="5"className="slider" value={this.state.salary} onChange={this.handleSalary} />
+            <input id="salary" type="range" min="45" max="100" step="5"className="slider" value={this.state.salary} onChange={this.handleChange} />
             {/* <input  className="inputField" type="number" value={this.state.salary} min="45" max="100" step="5" onChange={this.handleSalary}/> */}
           </label>
-          <br/>
-          <input className="submitButton" type="submit" value="Submit" />
+          </div>
+          {/* <input className="submitButton" type="submit" value="Submit" /> */}
           <input className="resetButton" type="reset" value="Reset" />
         </form>
         <h2>Cost of bugs/month: ${this.state.calculatedTotal.toFixed(2)}</h2>
