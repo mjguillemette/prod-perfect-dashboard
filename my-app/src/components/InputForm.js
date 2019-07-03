@@ -94,7 +94,6 @@ class InputForm extends Component {
               <input className="resetButton" type="reset" value="Reset" />
             </form>
             <h1 style={{
-              // width: `500px`,
               fontSize: `calc(10px + 2vmin)`
             }}
             >
