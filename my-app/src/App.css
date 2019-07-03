@@ -1,4 +1,9 @@
+html {
+  background-color: #506185; 
+}
+
 .App {
+  max-width: 80vw;
   text-align: center;
 }
 
@@ -6,7 +11,8 @@
 .App-header {
   background-color: #506185;
   min-height: 100vh;
-  display: flex;
+  min-width: 100vw;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -65,15 +71,19 @@
   outline-style: none;
 }
 
+div.teamForm {
+  width: 400px;
+}
+
 .teamForm {
   border-radius: 8px;
   background-color: #323d53;
   padding: 2rem;
 }
 
-.inputForm {
+/* .inputForm {
   width: 600px;
-}
+} */
 
 span {
   color: #c2c2e9
@@ -94,7 +104,7 @@ input[type=range] {
   background-color: #323d53;
   -webkit-appearance: none;
   margin: 10px auto;
-  width: 60%;
+  width: 80%;
 }
 
 input[type=range]:focus {
@@ -104,7 +114,6 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 60%;
   height: 6px;
   cursor: pointer;
-  animate: 0.2s;
   box-shadow: 0px 0px 0px #000000;
   background: #9ACBE3;
   border-radius: 18px;
@@ -115,8 +124,9 @@ input[type=range]::-webkit-slider-thumb {
   border: 0px solid #2497E3;
   height: 14px;
   width: 14px;
+  max-width: 326px;
   border-radius: 26px;
-  background: #16161d;
+  background: #eeeeee;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -4px;
@@ -128,7 +138,6 @@ input[type=range]::-moz-range-track {
   width: 60%;
   height: 6px;
   cursor: pointer;
-  animate: 0.2s;
   box-shadow: 0px 0px 0px #000000;
   background: #9ACBE3;
   border-radius: 18px;
@@ -140,7 +149,7 @@ input[type=range]::-moz-range-thumb {
   height: 14px;
   width: 14px;
   border-radius: 26px;
-  background: #16161d;
+  background: #eeeeee;
   cursor: pointer;
 }
 input[type=range]::-ms-track {
@@ -171,7 +180,7 @@ input[type=range]::-ms-thumb {
   height: 14px;
   width: 14px;
   border-radius: 26px;
-  background: #16161d;
+  background: #eeeeee;
   cursor: pointer;
 }
 input[type=range]:focus::-ms-fill-lower {
@@ -179,4 +188,14 @@ input[type=range]:focus::-ms-fill-lower {
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #9ACBE3;
+}
+
+@media screen and (max-width: 400px) {
+  
+  html {
+    max-width: 80vw;
+  }
+  div.teamForm {
+    max-width: 200px;
+  }
 }
