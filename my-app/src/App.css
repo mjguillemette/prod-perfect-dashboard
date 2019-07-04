@@ -34,9 +34,8 @@ html {
   text-decoration: none;
   display: inline-block;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 1.6rem;
-  margin-left: 1.6rem;
 }
 
 .resetButton:hover {
@@ -45,29 +44,6 @@ html {
 }
 
 .resetButton:focus {
-  outline-style: none;
-}
-
-.submitButton {
-  background-color: #8080f7;
-  border: none;
-  border-radius: 9px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: 1.6rem;
-}
-
-.submitButton:hover {
-  outline-style: none;
-  background-color: #616181;
-}
-
-.submitButton:focus {
   outline-style: none;
 }
 
