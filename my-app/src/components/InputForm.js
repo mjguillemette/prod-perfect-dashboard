@@ -39,8 +39,8 @@ class InputForm extends Component {
       let { engineers, salary, qa } = this.state
       let formatSalary = new Intl.NumberFormat().format(salary * 1000)
       let qaPerDev = engineers / qa
-      let calculatedTotal = engineers * (qaPerDev * (((salary * 8) * (engineers/3)) / 12))
-      let formatTotal = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(calculatedTotal)
+      let calculatedTotal = engineers * (qaPerDev * (((salary * 8) * (engineers/3.22)) / 12)) + (salary * qa * 100 / 12)
+      let formatTotal = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0, minimumFractionDigits: 0, style: 'currency', currency: 'USD' }).format(calculatedTotal)
 
       return (
           <div className="inputForm">
@@ -91,14 +91,25 @@ class InputForm extends Component {
                   />
                 </label>
               </div>
+              <p
+                style={{
+                  margin: '1.5em 0 0 0',
+                  lineHeight: '.5em',
+                  fontSize: '1.2rem'
+                }}
+              >
+            Cost of bugs/month:
+            </p>
+            <h1 
+              style={{
+                margin: 'auto',
+                lineHeight: '1.5em'
+              }}
+            >
+              {formatTotal}
+            </h1>
               <input className="resetButton" type="reset" value="Reset" />
             </form>
-            <h1 style={{
-              fontSize: `calc(10px + 2vmin)`
-            }}
-            >
-            Cost of bugs/month: {formatTotal}
-            </h1>
         </div>
         
       )
