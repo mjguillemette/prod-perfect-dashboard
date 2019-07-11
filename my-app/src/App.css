@@ -1,5 +1,5 @@
 html {
-  background-color: #506185; 
+  background-color: #3c6596;
 }
 
 .App {
@@ -7,9 +7,8 @@ html {
   text-align: center;
 }
 
-
 .App-header {
-  background-color: #506185;
+  background-color: #3c6596;
   min-height: 100vh;
   min-width: 100vw;
   display: inline-flex;
@@ -17,7 +16,7 @@ html {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #eee;
 }
 
 .App-link {
@@ -62,7 +61,7 @@ div.teamForm {
 } */
 
 span {
-  color: #c2c2e9
+  color: #bacce2;
 }
 
 @keyframes App-logo-spin {
@@ -75,7 +74,7 @@ span {
 }
 
 /* The following is for the range input styling */
-input[type=range] {
+input[type='range'] {
   height: 20px;
   background-color: #323d53;
   -webkit-appearance: none;
@@ -83,21 +82,21 @@ input[type=range] {
   width: 80%;
 }
 
-input[type=range]:focus {
+input[type='range']:focus {
   outline: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type='range']::-webkit-slider-runnable-track {
   width: 60%;
   height: 6px;
   cursor: pointer;
   box-shadow: 0px 0px 0px #000000;
-  background: #9ACBE3;
+  background: #9acbe3;
   border-radius: 18px;
   border: 0px solid #000000;
 }
-input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0px 0px 0px #9497FF;
-  border: 0px solid #2497E3;
+input[type='range']::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #9497ff;
+  border: 0px solid #2497e3;
   height: 14px;
   width: 14px;
   max-width: 326px;
@@ -107,28 +106,28 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -4px;
 }
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #9ACBE3;
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: #9acbe3;
 }
-input[type=range]::-moz-range-track {
+input[type='range']::-moz-range-track {
   width: 60%;
   height: 6px;
   cursor: pointer;
   box-shadow: 0px 0px 0px #000000;
-  background: #9ACBE3;
+  background: #9acbe3;
   border-radius: 18px;
   border: 0px solid #000000;
 }
-input[type=range]::-moz-range-thumb {
-  box-shadow: 0px 0px 0px #9497FF;
-  border: 0px solid #2497E3;
+input[type='range']::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #9497ff;
+  border: 0px solid #2497e3;
   height: 14px;
   width: 14px;
   border-radius: 26px;
   background: #eeeeee;
   cursor: pointer;
 }
-input[type=range]::-ms-track {
+input[type='range']::-ms-track {
   width: 60%;
   height: 6px;
   cursor: pointer;
@@ -137,37 +136,36 @@ input[type=range]::-ms-track {
   border-color: transparent;
   color: transparent;
 }
-input[type=range]::-ms-fill-lower {
-  background: #9ACBE3;
+input[type='range']::-ms-fill-lower {
+  background: #9acbe3;
   border: 0px solid #000000;
   border-radius: 36px;
   box-shadow: 0px 0px 0px #000000;
 }
-input[type=range]::-ms-fill-upper {
-  background: #9ACBE3;
+input[type='range']::-ms-fill-upper {
+  background: #9acbe3;
   border: 0px solid #000000;
   border-radius: 36px;
   box-shadow: 0px 0px 0px #000000;
 }
-input[type=range]::-ms-thumb {
+input[type='range']::-ms-thumb {
   margin-top: 1px;
-  box-shadow: 0px 0px 0px #9497FF;
-  border: 0px solid #2497E3;
+  box-shadow: 0px 0px 0px #9497ff;
+  border: 0px solid #2497e3;
   height: 14px;
   width: 14px;
   border-radius: 26px;
   background: #eeeeee;
   cursor: pointer;
 }
-input[type=range]:focus::-ms-fill-lower {
-  background: #9ACBE3;
+input[type='range']:focus::-ms-fill-lower {
+  background: #9acbe3;
 }
-input[type=range]:focus::-ms-fill-upper {
-  background: #9ACBE3;
+input[type='range']:focus::-ms-fill-upper {
+  background: #9acbe3;
 }
 
 @media screen and (max-width: 400px) {
-  
   html {
     max-width: 80vw;
   }
