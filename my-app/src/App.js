@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>
-          <span>ProdPerfect</span>Dashboard App
+          <span>ProdPerfect</span> Dashboard App
         </h1>
         <InputForm />
       </header>
