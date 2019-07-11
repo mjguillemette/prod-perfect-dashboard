@@ -38,9 +38,9 @@ html {
   margin-top: 1.6rem;
 }
 
-.resetButton:hover {
+.resetButton:active {
   outline-style: none;
-  background-color: #616181;
+  background-color: #8f6a6a;
 }
 
 .resetButton:focus {
