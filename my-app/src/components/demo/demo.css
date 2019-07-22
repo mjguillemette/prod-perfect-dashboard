@@ -1,0 +1,172 @@
+html {
+  background-color: #3c6596;
+}
+
+.App {
+  max-width: 100vw;
+  text-align: left;
+  display: flex;
+}
+
+.Column {
+  background-color: #3c6596;
+  padding: 1em;
+  min-height: 80vh;
+  width: 400px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #eee;
+}
+
+.App-link {
+  color: #ffffff;
+}
+
+.resetButton {
+  background-color: #f78080;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 1.6rem;
+}
+
+.resetButton:active {
+  outline-style: none;
+  background-color: #8f6a6a;
+}
+
+.resetButton:focus {
+  outline-style: none;
+}
+
+div.teamForm {
+  width: 400px;
+}
+
+.teamForm {
+  border-radius: 8px;
+  background-color: #323d53;
+  padding: 2rem;
+}
+
+/* .inputForm {
+  width: 600px;
+} */
+
+span {
+  color: #bacce2;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The following is for the range input styling */
+input[type='range'] {
+  height: 20px;
+  background-color: #414e68;
+  -webkit-appearance: none;
+  margin: 10px auto;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 0.8em;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #9acbe3;
+  border-radius: 18px;
+  border: 0px solid #000000;
+}
+input[type='range']::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #9497ff;
+  border: 0px solid #2497e3;
+  height: 2em;
+  width: 2em;
+  border-radius: 26px;
+  background: #eeeeee;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -0.5em;
+}
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: #9acbe3;
+}
+input[type='range']::-moz-range-track {
+  height: 6px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #9acbe3;
+  border-radius: 18px;
+  border: 0px solid #000000;
+}
+input[type='range']::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #9497ff;
+  border: 0px solid #2497e3;
+  height: 2em;
+  width: 2em;
+  border-radius: 26px;
+  background: #eeeeee;
+  cursor: pointer;
+}
+input[type='range']::-ms-track {
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type='range']::-ms-fill-lower {
+  background: #9acbe3;
+  border: 0px solid #000000;
+  border-radius: 36px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type='range']::-ms-fill-upper {
+  background: #9acbe3;
+  border: 0px solid #000000;
+  border-radius: 36px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type='range']::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #9497ff;
+  border: 0px solid #2497e3;
+  height: 2em;
+  width: 2em;
+  border-radius: 26px;
+  background: #eeeeee;
+  cursor: pointer;
+}
+input[type='range']:focus::-ms-fill-lower {
+  background: #9acbe3;
+}
+input[type='range']:focus::-ms-fill-upper {
+  background: #9acbe3;
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    max-width: 80vw;
+  }
+  div.teamForm {
+    max-width: 200px;
+  }
+}

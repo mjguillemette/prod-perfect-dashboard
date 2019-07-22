@@ -1,16 +1,11 @@
 import React from 'react'
 import './App.css'
-import InputForm from './components/InputForm'
+import Page from './components/Page'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>
-          <span>ProdPerfect</span> Dashboard App
-        </h1>
-        <InputForm />
-      </header>
+      <Page />
     </div>
   )
 }
