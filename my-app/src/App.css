@@ -17,6 +17,7 @@ h2 {
   text-align: left;
   display: flex;
   height: 100vh;
+  color: #2a272a;
 }
 
 .SelectedBox {
@@ -30,8 +31,8 @@ h2 {
 }
 
 .Page {
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
   display: flex;
   width: 88vw;
   height: 88vh;
@@ -53,7 +54,8 @@ h2 {
 }
 
 @media only screen and (min-width: 1200px) {
-  .View {
+  .Page {
+    flex-direction: row;
   }
 }
 
@@ -62,6 +64,7 @@ input[type='range'] {
   width: 90%;
   border-radius: 26px;
   padding: 0.6em 1.2em;
+  /* box-shadow: inset 0px 0px 4px 2px #494125; */
   background-color: #ececec;
   -webkit-appearance: none;
   margin: auto;

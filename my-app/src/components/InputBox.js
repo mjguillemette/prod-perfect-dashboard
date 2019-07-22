@@ -27,7 +27,16 @@ const InputBox = props => {
   `
 
   const handleChange = e => {
-    props.setValue(e.target.value)
+    e.preventDefault()
+    if (props.inputType === 'checkbox') {
+      if (e.target.value === 'false') {
+        props.setValue(true)
+      } else {
+        props.setValue(false)
+      }
+    } else {
+      props.setValue(e.target.value)
+    }
   }
 
   return (
