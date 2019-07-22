@@ -145,8 +145,49 @@ input[type='range']:focus::-ms-fill-upper {
 
 /* */
 input[type='checkbox'] {
-  height: 34px;
-  width: 24px;
   float: right;
   margin: 0 0 0 auto;
+}
+
+.toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 56px;
+  height: 28px;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #9ca4b4;
+  transition: background-color ease 0.4s;
+}
+
+.toggle:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  background: #ececec;
+  left: 8%;
+  top: 3px;
+  border-radius: 50%;
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.6s;
+}
+
+.toggle:checked {
+  background-color: #2d3749;
+}
+
+.toggle:checked:before {
+  background: #85a2d5;
+  left: 50%;
 }
