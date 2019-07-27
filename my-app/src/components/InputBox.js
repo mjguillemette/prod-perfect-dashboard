@@ -53,7 +53,6 @@ const InputBox = props => {
           step={props.step}
           className={props.inputType === 'checkbox' ? 'toggle' : ''}
           onChange={handleChange}
-          onMouseUp={handleChange}
           onTouchMove={handleChange}
           onTouchEnd={handleChange}
           checked={props.value ? 'checked' : ''}
