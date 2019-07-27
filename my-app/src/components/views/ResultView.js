@@ -4,13 +4,15 @@ import Graph from '../Graph'
 const ResultView = props => {
   const loc = props.engineers * props.linesOfCode * props.duration
   const rateOfBugs = 0.01
-  const totalBugs = loc * rateOfBugs
+  const totalBugs = props.dedicatedQA
+    ? loc * rateOfBugs
+    : loc * (rateOfBugs * 1.12)
   const initialCostOfBug = 40
 
-  const percent4X = 0.26
-  const percent10X = 0.3
-  const percent40X = 0.38
-  const percent100X = 0.06
+  const percent4X = props.devTesting ? 0.3 : 0.26
+  const percent10X = props.devTesting ? 0.34 : 0.3
+  const percent40X = props.devTesting ? 0.31 : 0.38
+  const percent100X = props.devTesting ? 0.05 : 0.06
 
   const dollarsAt4X = totalBugs * percent4X * initialCostOfBug * 4
   const dollarsAt10X = totalBugs * percent10X * initialCostOfBug * 10
@@ -44,14 +46,18 @@ const ResultView = props => {
       <Graph />
       <h1>#Output</h1>
       Total Lines of Code: {loc} <br />
-      Total Bugs (20 Bugs / 1k LoC): {totalBugs} <br />
-      Found at 4X: {percent4X * totalBugs} -- ${dollarsAt4X}
+      Total Bugs (20 Bugs / 1k LoC): {totalBugs.toFixed(0)} <br />
+      Found at 4X: {(percent4X * totalBugs).toFixed(0)} -- $
+      {dollarsAt4X.toFixed(0)}
       <br />
-      Found at 10X: {percent10X * totalBugs} -- ${dollarsAt10X}
+      Found at 10X: {(percent10X * totalBugs).toFixed(0)} -- $
+      {dollarsAt10X.toFixed(0)}
       <br />
-      Found at 40X: {percent40X * totalBugs} -- ${dollarsAt40X}
+      Found at 40X: {(percent40X * totalBugs).toFixed(0)} -- $
+      {dollarsAt40X.toFixed(0)}
       <br />
-      Found at 100X: {percent100X * totalBugs} -- ${dollarsAt100X} <br />
+      Found at 100X: {(percent100X * totalBugs).toFixed(0)} -- $
+      {dollarsAt100X.toFixed(0)} <br />
       <h2>Total Cost: {formatTotal}</h2>
     </div>
   )

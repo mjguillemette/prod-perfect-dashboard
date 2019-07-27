@@ -28,15 +28,12 @@ const InputBox = props => {
 
   const handleChange = e => {
     e.preventDefault()
-    if (props.inputType === 'checkbox') {
-      if (e.target.value === 'false') {
-        props.setValue(true)
-      } else {
-        props.setValue(false)
-      }
-    } else {
-      props.setValue(e.target.value)
-    }
+
+    props.inputType === 'checkbox'
+      ? props.value === true
+        ? props.setValue(false)
+        : props.setValue(true)
+      : props.setValue(e.target.value)
   }
 
   return (
@@ -53,9 +50,9 @@ const InputBox = props => {
           step={props.step}
           className={props.inputType === 'checkbox' ? 'toggle' : ''}
           onChange={handleChange}
-          onTouchMove={handleChange}
-          onTouchEnd={handleChange}
-          checked={props.value ? 'checked' : ''}
+          checked={
+            props.value && props.inputType === 'checkbox' ? 'checked' : ''
+          }
         />
       </InputHeading>
       <br />
