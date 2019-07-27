@@ -27,6 +27,7 @@ const QAView = props => {
         setValue={props.setAutomatedQA}
         className="QABox"
         inputType="checkbox"
+        text="Test automation is the use of external software to test, and to monitor test coverage. Automated QA can perform tests that are difficult to implement manually."
       />
     </div>
   )

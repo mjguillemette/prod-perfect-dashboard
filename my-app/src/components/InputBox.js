@@ -14,14 +14,14 @@ const InputBox = props => {
     display: flex;
   `
   const InputHeading = styled.div`
-    flex-direction: ${props.inputType === 'checkbox' ? 'row' : 'column'}
+    flex-direction: ${props.inputType === 'checkbox' ? 'row' : 'column'};
     display: flex;
   `
   const DisplayValue = styled.div`
     right: 1.2em;
-    top: .6em;
+    top: 0.6em;
     position: absolute;
-    font-size: 1.8em
+    font-size: 1.8em;
     font-weight: 400;
     display: flex;
   `
@@ -52,10 +52,10 @@ const InputBox = props => {
           max={props.maxInput}
           step={props.step}
           className={props.inputType === 'checkbox' ? 'toggle' : ''}
-          onChange={e => handleChange(e)}
-          onMouseUp={e => handleChange(e)}
-          onTouchMove={e => handleChange(e)}
-          onTouchEnd={e => handleChange(e)}
+          onChange={handleChange}
+          onMouseUp={handleChange}
+          onTouchMove={handleChange}
+          onTouchEnd={handleChange}
           checked={props.value ? 'checked' : ''}
         />
       </InputHeading>
