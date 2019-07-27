@@ -26,7 +26,7 @@ const EngineerView = props => {
         maxInput="1000"
         minInput="50"
         step="50"
-        text="How many lines of code your developers are producsing per month"
+        text="How many lines of code your developers are producing per month"
       />
       <InputBox
         id="Duration"
