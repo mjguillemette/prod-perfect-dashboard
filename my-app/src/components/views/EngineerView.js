@@ -4,7 +4,7 @@ import InputBox from '../InputBox'
 const EngineerView = props => {
   return (
     <div className="View">
-      <h1>Development Metrics</h1>
+      <h1>Dev Team Metrics</h1>
       <InputBox
         id="Engineers"
         value={props.engineers}
@@ -23,8 +23,8 @@ const EngineerView = props => {
         name="Lines of Code"
         className="EngineersBox"
         inputType="range"
-        maxInput="1000"
-        minInput="50"
+        maxInput="1500"
+        minInput="250"
         step="50"
         text="How many lines of code your developers are producing per month"
       />
@@ -35,7 +35,7 @@ const EngineerView = props => {
         name="Project Duration"
         className="EngineersBox"
         inputType="range"
-        maxInput="24"
+        maxInput="12"
         minInput="1"
         text="Duration of project coding in months"
       />

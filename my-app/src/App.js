@@ -4,8 +4,8 @@ import Page from './components/Page'
 
 function App() {
   const [engineers, setEngineers] = useState(10)
-  const [linesOfCode, setLinesOfCode] = useState(350)
-  const [duration, setDuration] = useState(12)
+  const [linesOfCode, setLinesOfCode] = useState(450)
+  const [duration, setDuration] = useState(6)
 
   const [dedicatedQA, setDedicatedQA] = useState(true)
   const [devTesting, setDevTesting] = useState(false)

@@ -7,6 +7,7 @@ const QAView = props => {
       <h1> QA Metrics</h1>
       <InputBox
         name="Dedicated QA Team"
+        id="DedicatedQA"
         value={props.dedicatedQA}
         setValue={props.setDedicatedQA}
         className="QABox"
@@ -15,6 +16,7 @@ const QAView = props => {
       />
       <InputBox
         name="Developer Testing"
+        id="DevTesting"
         value={props.devTesting}
         setValue={props.setDevTesting}
         className="QABox"
@@ -23,6 +25,7 @@ const QAView = props => {
       />
       <InputBox
         name="Automated QA"
+        id="AutomatedQA"
         value={props.automatedQA}
         setValue={props.setAutomatedQA}
         className="QABox"
