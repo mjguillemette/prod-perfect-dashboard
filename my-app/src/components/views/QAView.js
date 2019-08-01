@@ -1,21 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import InputBox from '../InputBox'
 
 const QAView = props => {
+  const [developerSelected, setDeveloperSelected] = useState(false)
+  const [automatedSelected, setAutomatedSelected] = useState(false)
+
   return (
     <div className="View">
-      <h1> QA Metrics</h1>
-      <InputBox
-        name="Dedicated QA Team"
-        id="DedicatedQA"
-        value={props.dedicatedQA}
-        setValue={props.setDedicatedQA}
-        className="QABox"
-        inputType="checkbox"
-        text="The number of QA engineers allows for greater test coverage, increasing the chance a bug will be caught in testing."
-      />
+      <h2 className="ViewHeading">Quality Assurance Profile</h2>
       <InputBox
         name="Developer Testing"
+        isSelected={developerSelected}
+        setSelected={setDeveloperSelected}
         id="DevTesting"
         value={props.devTesting}
         setValue={props.setDevTesting}
@@ -25,6 +21,8 @@ const QAView = props => {
       />
       <InputBox
         name="Automated QA"
+        isSelected={automatedSelected}
+        setSelected={setAutomatedSelected}
         id="AutomatedQA"
         value={props.automatedQA}
         setValue={props.setAutomatedQA}

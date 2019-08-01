@@ -1,43 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
 import InputBox from '../InputBox'
 
 const EngineerView = props => {
+  const [engineersSelected, setEngineersSelected] = useState(false)
+  const [linesOfCodeSelected, setLinesOfCodeSelected] = useState(false)
+  const [durationSelected, setDurationSelected] = useState(false)
+  const [defectsSelected, setDefectsSelected] = useState(false)
+
   return (
     <div className="View">
-      <h1>Dev Team Metrics</h1>
+      <h2 className="ViewHeading">Development Team</h2>
       <InputBox
         id="Engineers"
         value={props.engineers}
         setValue={props.setEngineers}
         name="Engineers"
-        className="EngineersBox SelectedBox"
+        isSelected={engineersSelected}
+        setSelected={setEngineersSelected}
+        className="EngineersBox"
         inputType="range"
-        maxInput="30"
+        maxInput="20"
         minInput="1"
-        text="The size of your engineering team is a good scale of the complexity of software. More people writing code means more bugs being generated."
+        text="The size of an engineering team is a good indicator of the complexity of a project. More engineers working on a project means more logical lines of code (LLoC) produced."
       />
       <InputBox
         id="LinesOfCode"
         value={props.linesOfCode}
         setValue={props.setLinesOfCode}
         name="Lines of Code"
+        isSelected={linesOfCodeSelected}
+        setSelected={setLinesOfCodeSelected}
+        subText="/ month"
         className="EngineersBox"
         inputType="range"
         maxInput="1500"
         minInput="250"
         step="50"
-        text="How many lines of code your developers are producing per month"
+        text=""
       />
       <InputBox
         id="Duration"
         value={props.duration}
         setValue={props.setDuration}
-        name="Project Duration"
+        name="Duration"
+        isSelected={durationSelected}
+        setSelected={setDurationSelected}
+        subText="in months"
         className="EngineersBox"
         inputType="range"
         maxInput="12"
         minInput="1"
-        text="Duration of project coding in months"
+        step=".5"
+        text="Project length can vary greatly. Enter the anticipated number of months in which a project will be coded."
+      />
+      <InputBox
+        id="Defects"
+        value={props.defects}
+        setValue={props.setDefects}
+        name="Defects"
+        isSelected={defectsSelected}
+        setSelected={setDefectsSelected}
+        subText="/ 1k LLoC"
+        className="EngineersBox"
+        inputType="range"
+        maxInput="60"
+        minInput="1"
+        step="1"
+        text="In one case study, Microsoft found that through the internal testing phase between 10-20 lines of in each 1k LoC contained defects (Moore 1992). This number can vary greatly depending on factors such as the seniority of your software development team, and the methods that they employ."
       />
     </div>
   )

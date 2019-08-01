@@ -3,13 +3,12 @@ html {
 }
 
 h1 {
-  min-height: 60px;
-  font-size: 1.8em;
-  margin: 0.4em 1.4em;
+  font-size: 2.6;
+  margin: 0.4em;
 }
 
 h2 {
-  margin: 0 0 0.8em 0;
+  margin: 2em 0 0.38em 0;
   display: flex;
 }
 
@@ -17,22 +16,89 @@ h2 {
   text-align: left;
   display: flex;
   height: 100vh;
-  color: #2a272a;
+  color: #696161;
+}
+
+.PageHeading {
+  color: #2d3749;
+  background-color: #f8f8f8;
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 400px;
+  border-radius: 14px;
+  padding: 0.4em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+}
+
+.InputLabel {
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 12px;
+  margin-top: 5px;
+}
+
+.Info {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 16px solid #2d3749;
+  position: absolute;
+  right: 2.2em;
+  top: 1.8em;
+  display: inline-block;
+  opacity: 0.26;
+}
+
+.InfoShown {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Safari prior 9.0 */
+  transform: rotate(180deg); /* Standard syntax */
+  border-bottom: 16px solid #535b6a;
+  opacity: 0.8;
+}
+
+.InputText {
+  margin-top: -0.8em;
+  color: #737b7e;
+  display: none;
+}
+
+.TextShown {
+  display: block;
+}
+
+.SubText {
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 .SelectedBox {
-  background-color: #2a272a;
+  background-color: #f8f8f8;
   display: inline-flexbox;
-  color: #eee;
+  color: #696161;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-bottom: 1.4em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
 }
 
 .View {
   margin: 0 auto;
+  width: 100vw;
+  max-width: 470px;
+}
+
+.ViewHeading {
+  color: #535b6a;
+  font-weight: 500;
+  margin: 2em 1em 1em 1.4em;
 }
 
 .Page {
   flex-wrap: wrap;
-  flex-direction: row-reverse;
   display: flex;
   width: 88vw;
   height: 88vh;
@@ -44,10 +110,6 @@ h2 {
   display: flex;
   flex-wrap: wrap;
 }
-.QABox {
-  background-color: #ececec;
-  color: #2a272a;
-}
 
 .App-link {
   color: #ffffff;
@@ -57,15 +119,18 @@ h2 {
   .Page {
     flex-direction: row;
   }
+  .InputLabel {
+    font-size: 1.5rem;
+  }
 }
 
+/* Range Sliders */
 input[type='range'] {
   height: 20px;
   width: 90%;
   border-radius: 26px;
   padding: 0.6em 1.2em;
-  /* box-shadow: inset 0px 0px 4px 2px #494125; */
-  background-color: #ececec;
+  background-color: transparent;
   -webkit-appearance: none;
   margin: auto;
 }
@@ -75,8 +140,7 @@ input[type='range']:focus {
 }
 input[type='range']::-webkit-slider-runnable-track {
   height: 1em;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px #000000;
+  cursor: ew-resize;
   background: #fbdf80;
   border-radius: 18px;
 }
@@ -84,8 +148,8 @@ input[type='range']::-webkit-slider-thumb {
   height: 1.4rem;
   width: 1.4rem;
   border-radius: 50%;
-  background: #2a272a;
-  cursor: pointer;
+  background: #2d3749;
+  cursor: ew-resize;
   -webkit-appearance: none;
   margin-top: -0.2rem;
 }
@@ -94,7 +158,7 @@ input[type='range']:focus::-webkit-slider-runnable-track {
 }
 input[type='range']::-moz-range-track {
   height: 6px;
-  cursor: pointer;
+  cursor: ew-resize;
   box-shadow: 0px 0px 0px #000000;
   background: #fbdf80;
   border-radius: 18px;
@@ -106,12 +170,12 @@ input[type='range']::-moz-range-thumb {
   height: 2em;
   width: 2em;
   border-radius: 26px;
-  background: #eeeeee;
-  cursor: pointer;
+  background: #2d3749;
+  cursor: ew-resize;
 }
 input[type='range']::-ms-track {
   height: 6px;
-  cursor: pointer;
+  cursor: ew-resize;
   background: transparent;
   border-color: transparent;
   color: transparent;
@@ -144,10 +208,10 @@ input[type='range']:focus::-ms-fill-upper {
   background: #fbdf80;
 }
 
-/* */
+/* Checkbox Toggles */
 input[type='checkbox'] {
   float: right;
-  margin: 0 0 0 auto;
+  margin: 0 2em 0 1em;
 }
 
 .toggle {
@@ -191,4 +255,18 @@ input[type='checkbox'] {
 .toggle:checked:before {
   background: #85a2d5;
   left: 50%;
+}
+
+input[type='number'] {
+  font-weight: 300;
+  border-radius: 4px;
+  color: #2d3749;
+}
+
+input[type='number']:focus {
+  border-radius: 4px;
+  border-style: 1px #2a272a solid;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #696161;
 }

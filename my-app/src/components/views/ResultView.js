@@ -3,10 +3,8 @@ import Graph from '../Graph'
 
 const ResultView = props => {
   const loc = props.engineers * props.linesOfCode * props.duration
-  const rateOfBugs = 0.01
-  const totalBugs = props.dedicatedQA
-    ? loc * rateOfBugs
-    : loc * (rateOfBugs * 1.12)
+  const rateOfBugs = props.defects / 1000
+  const totalBugs = loc * rateOfBugs
   const initialCostOfBug = 40
 
   const percent4X = props.devTesting ? 0.3 : 0.26

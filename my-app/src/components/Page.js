@@ -2,10 +2,11 @@ import React from 'react'
 import EngineerView from './views/EngineerView'
 import QAView from './views/QAView'
 import ResultView from './views/ResultView'
-
+import HeadingView from './views/HeadingView'
 const Page = props => {
   return (
     <div className="Page">
+      <HeadingView />
       <div className="Metrics">
         <EngineerView
           engineers={props.engineers}
@@ -14,6 +15,8 @@ const Page = props => {
           setLinesOfCode={props.setLinesOfCode}
           duration={props.duration}
           setDuration={props.setDuration}
+          defects={props.defects}
+          setDefects={props.setDefects}
         />
         <QAView
           dedicatedQA={props.dedicatedQA}
@@ -31,6 +34,7 @@ const Page = props => {
         devTesting={props.devTesting}
         automatedQA={props.automatedQA}
         linesOfCode={props.linesOfCode}
+        defects={props.defects}
       />
     </div>
   )
