@@ -1,11 +1,9 @@
 import React from 'react'
 
-const HeadingView = props => {
+const HeadingView = () => {
   return (
-    <div className="View">
-      <div className="PageHeading">
-        <h1>The Cost of a Bug</h1>
-      </div>
+    <div className="PageHeading">
+      <h1 style={{ margin: '.2em' }}>The Cost of a Bug</h1>
     </div>
   )
 }

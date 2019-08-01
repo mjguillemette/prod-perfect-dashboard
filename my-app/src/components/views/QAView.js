@@ -3,7 +3,7 @@ import InputBox from '../InputBox'
 
 const QAView = props => {
   const [developerSelected, setDeveloperSelected] = useState(false)
-  const [automatedSelected, setAutomatedSelected] = useState(false)
+  const [automatedSelected, setAutomatedSelected] = useState(true)
 
   return (
     <div className="View">
@@ -28,7 +28,7 @@ const QAView = props => {
         setValue={props.setAutomatedQA}
         className="QABox"
         inputType="checkbox"
-        text="Test automation is the use of external software to test, and to monitor test coverage. Automated QA can perform tests that are difficult to implement manually."
+        text="Test automation is the use of external software to test and to monitor test coverage. Automated QA can perform tests that are difficult to implement manually. Third-party specialists such as ProdPerfect can assist in the creation and maintenance of these automated tests, allowing your development and quality assurance teams to focus on more dynamic areas of development."
       />
     </div>
   )

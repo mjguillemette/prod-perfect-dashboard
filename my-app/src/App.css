@@ -19,15 +19,24 @@ h2 {
   color: #696161;
 }
 
+.Page {
+  flex-wrap: wrap;
+  display: flex;
+  width: 94vw;
+  margin: auto;
+}
+
+.View {
+  margin: 0 0 6px;
+  width: 96vw;
+  max-width: 470px;
+  min-width: 420px;
+}
+
 .PageHeading {
   color: #2d3749;
-  background-color: #f8f8f8;
-  margin: 0 auto;
-  width: 100vw;
-  max-width: 400px;
-  border-radius: 14px;
-  padding: 0.4em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+  font-size: 2em;
+  margin: 2% 2% auto;
 }
 
 .InputLabel {
@@ -85,25 +94,33 @@ h2 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
 }
 
-.View {
-  margin: 0 auto;
-  width: 100vw;
-  max-width: 470px;
+.OutputBox {
+  position: relative;
+  max-width: 400px;
+  font-size: 2.3em;
+  border-radius: 14px;
+  padding: 0.4em;
+  margin: 0.6em 0;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  background-color: #f8f8f8;
+  display: inline-flexbox;
+  color: #696161;
+  font-style: normal;
+  font-weight: 300;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+}
+
+.OutputBox span {
+  font-size: 0.4em;
+  font-weight: 400;
 }
 
 .ViewHeading {
   color: #535b6a;
   font-weight: 500;
   margin: 2em 1em 1em 1.4em;
-}
-
-.Page {
-  flex-wrap: wrap;
-  display: flex;
-  width: 88vw;
-  height: 88vh;
-  padding: 2%;
-  margin: auto;
 }
 
 .Metrics {

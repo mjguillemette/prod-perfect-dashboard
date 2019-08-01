@@ -8,9 +8,17 @@ const ResultView = props => {
   const initialCostOfBug = 40
 
   const percent4X = props.devTesting ? 0.3 : 0.26
-  const percent10X = props.devTesting ? 0.34 : 0.3
-  const percent40X = props.devTesting ? 0.31 : 0.38
+  const percent10X = props.devTesting ? 0.28 : 0.3
+  const percent40X = props.devTesting
+    ? props.automatedQA
+      ? 0.32
+      : 0.33
+    : props.automatedQA
+    ? 0.32
+    : 0.38
   const percent100X = props.devTesting ? 0.05 : 0.06
+
+  const finalPercentage = percent4X + percent10X + percent40X + percent100X
 
   const dollarsAt4X = totalBugs * percent4X * initialCostOfBug * 4
   const dollarsAt10X = totalBugs * percent10X * initialCostOfBug * 10
@@ -34,7 +42,14 @@ const ResultView = props => {
         fontSize: '1.4rem'
       }}
     >
-      <h1>Testing</h1>
+      <div className="OutputBox">
+        {formatTotal} <span>Estimated Total Cost</span>
+      </div>
+      <div className="OutputBox">
+        {Math.floor(totalBugs * finalPercentage)}{' '}
+        <span>Total Bugs Generated</span>
+      </div>
+      {/* <h1>Testing</h1>
       Engineers: {props.engineers} <br />
       Lines of Code (/month): {props.linesOfCode} <br />
       Duration: {props.duration} <br />
@@ -56,7 +71,7 @@ const ResultView = props => {
       <br />
       Found at 100X: {(percent100X * totalBugs).toFixed(0)} -- $
       {dollarsAt100X.toFixed(0)} <br />
-      <h2>Total Cost: {formatTotal}</h2>
+      <h2>Total Cost: {formatTotal}</h2> */}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 const InputBox = styled.div`
@@ -64,6 +64,18 @@ const handleSelect = props => {
 }
 
 export default props => {
+  useEffect(() => {
+    const box = document.getElementById(props.id + 'Box')
+    const info = document.getElementById(props.id + 'Info')
+    const text = document.getElementById(props.id + 'Text')
+
+    if (props.isSelected === true) {
+      box.classList.add('SelectedBox')
+      info.classList.add('InfoShown')
+      text.classList.add('TextShown')
+    }
+  })
+
   if (props.inputType === 'checkbox') {
     return (
       <InputBox id={props.id + 'Box'} className={props.className}>

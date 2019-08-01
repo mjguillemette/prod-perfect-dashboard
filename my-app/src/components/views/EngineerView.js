@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import InputBox from '../InputBox'
 
 const EngineerView = props => {
-  const [engineersSelected, setEngineersSelected] = useState(false)
+  const [engineersSelected, setEngineersSelected] = useState(true)
   const [linesOfCodeSelected, setLinesOfCodeSelected] = useState(false)
   const [durationSelected, setDurationSelected] = useState(false)
   const [defectsSelected, setDefectsSelected] = useState(false)
