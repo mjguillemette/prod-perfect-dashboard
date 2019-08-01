@@ -7,16 +7,20 @@ const ResultView = props => {
   const totalBugs = loc * rateOfBugs
   const initialCostOfBug = 40
 
-  const percent4X = props.devTesting ? 0.3 : 0.26
+  const percent4X = props.devTesting ? 0.24 : 0.26
   const percent10X = props.devTesting ? 0.28 : 0.3
   const percent40X = props.devTesting
     ? props.automatedQA
-      ? 0.32
+      ? 0.3
       : 0.33
     : props.automatedQA
-    ? 0.32
-    : 0.38
-  const percent100X = props.devTesting ? 0.05 : 0.06
+    ? 0.3
+    : 0.36
+  const percent100X = props.devTesting
+    ? props.automatedQA
+      ? 0.048
+      : 0.05
+    : 0.06
 
   const finalPercentage = percent4X + percent10X + percent40X + percent100X
 
@@ -32,6 +36,12 @@ const ResultView = props => {
     style: 'currency',
     currency: 'USD'
   }).format(totalCost)
+  const prodCost = new Intl.NumberFormat('en-US', {
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+    style: 'currency',
+    currency: 'USD'
+  }).format(dollarsAt100X)
 
   return (
     <div
@@ -48,6 +58,10 @@ const ResultView = props => {
       <div className="OutputBox">
         {Math.floor(totalBugs * finalPercentage)}{' '}
         <span>Total Bugs Generated</span>
+      </div>
+      <div className="OutputBox">
+        {prodCost}
+        <span>Cost of bugs found in production</span>
       </div>
       {/* <h1>Testing</h1>
       Engineers: {props.engineers} <br />

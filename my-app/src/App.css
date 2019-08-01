@@ -37,6 +37,7 @@ h2 {
   color: #2d3749;
   font-size: 2em;
   margin: 2% 2% auto;
+  display: flex;
 }
 
 .InputLabel {

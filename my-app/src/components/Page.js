@@ -26,16 +26,16 @@ const Page = props => {
           automatedQA={props.automatedQA}
           setAutomatedQA={props.setAutomatedQA}
         />
+        <ResultView
+          engineers={props.engineers}
+          duration={props.duration}
+          dedicatedQA={props.dedicatedQA}
+          devTesting={props.devTesting}
+          automatedQA={props.automatedQA}
+          linesOfCode={props.linesOfCode}
+          defects={props.defects}
+        />
       </div>
-      <ResultView
-        engineers={props.engineers}
-        duration={props.duration}
-        dedicatedQA={props.dedicatedQA}
-        devTesting={props.devTesting}
-        automatedQA={props.automatedQA}
-        linesOfCode={props.linesOfCode}
-        defects={props.defects}
-      />
     </div>
   )
 }
